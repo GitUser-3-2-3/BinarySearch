@@ -21,8 +21,6 @@ public class SmallestLetter {
                 start = mid + 1;
             }
         }
-
         return letters[start % letters.length];
     }
 }
-
