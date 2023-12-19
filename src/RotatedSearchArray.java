@@ -15,11 +15,10 @@ public class RotatedSearchArray {
     public static void main(String[] args) {
         System.out.println();
 
-        int[] arr = {4, 5, 6, 7, 8, 0, 1, 2};
+        int[] arr = { 4, 5, 6, 7, 8, 0, 1, 2 };
         RotatedSearchArray obj = new RotatedSearchArray();
         System.out.println(obj.search(arr, 0));
     }
-
 
     public int search(int[] nums, int target) {
         int pivot = findPivotWithDuplicates(nums);
