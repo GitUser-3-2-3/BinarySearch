@@ -22,7 +22,7 @@ public class RotatedSearchArray {
 
 
     public int search(int[] nums, int target) {
-        int pivot = findPivot(nums);
+        int pivot = findPivotWithDuplicates(nums);
 
         // if you did not find pivot that means the array is not rotated
         if (pivot == -1) {
@@ -70,6 +70,43 @@ public class RotatedSearchArray {
                 start = mid + 1;
             } else {
                 return mid;
+            }
+        }
+        return -1;
+    }
+
+    int findPivotWithDuplicates(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            // all the four cases here
+            if (mid < end && arr[mid] > arr[mid + 1]) {
+                return mid;
+            } else if (mid > start && arr[mid] < arr[mid - 1]) {
+                return mid - 1;
+            }
+            // if elements at middle, start, end are equal just skip the duplicates
+            if (arr[mid] == arr[start] && arr[mid] == arr[end]) {
+                // skip the duplicates
+                // NOTE: what if these elements were the pivots
+
+                // check if start is pivot
+                if (arr[start] > arr[start + 1]) {
+                    return start;
+                }
+                start++;
+                // check if end is pivot
+                if (arr[end] < arr[end - 1]) {
+                    return end - 1;
+                }
+                end--;
+            }
+            // left side is sorted, so pivot should be in right
+            else if (arr[start] < arr[mid] || arr[start] == arr[mid] && arr[mid] > arr[end]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
             }
         }
         return -1;

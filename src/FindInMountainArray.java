@@ -6,8 +6,8 @@
 public class FindInMountainArray {
     public static void main(String[] args) {
         System.out.println();
-        int[] arr = {1, 2, 3, 4, 5, 3, 1};
-        int target = 3;
+        int[] arr = {1, 2, 3, 4, 5, 3, 2, 1, 0};
+        int target = 0;
         System.out.println(search(arr, target));
     }
 
