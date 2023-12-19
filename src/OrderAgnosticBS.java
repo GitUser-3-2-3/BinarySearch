@@ -5,11 +5,12 @@ public class OrderAgnosticBS {
         System.out.println();
         Scanner sc = new Scanner(System.in);
 
-        int[] arr1 = {-19, -13, -11, -7, -4, 0, 1, 4, 8, 11, 14, 15, 17};
-        int[] arr2 = {17, 15, 14, 11, 8, 4, 1, 0, -4, -7, -11, -13, -19};
+        int[] arr = {17, 15, 14, 11, 8, 4, 1, 0, -4, -7, -11, -13, -19};
         System.out.println("Enter the target element: ");
         int target = sc.nextInt();
-        System.out.println(orderAgnosticBS(arr2, target));
+        System.out.println(orderAgnosticBS(arr, target));
+
+        sc.close();
     }
 
     static int orderAgnosticBS(int[] arr, int target) {
