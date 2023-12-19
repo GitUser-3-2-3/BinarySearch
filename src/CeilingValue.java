@@ -5,9 +5,10 @@ public class CeilingValue {
         System.out.println();
 
         System.out.println("Enter the target value: ");
+        System.out.println("Enter the target value: ");
         Scanner sc = new Scanner(System.in);
 
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 11, 18};
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 11, 18 };
         int target = sc.nextInt();
         System.out.println(binarySearch(arr, target));
 
